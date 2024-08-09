@@ -14,16 +14,6 @@ import { envs, NATS_SERVICE } from 'src/config';
             },
           ]),
     ],
-    exports: [
-        ClientsModule.register([
-            { 
-              name: NATS_SERVICE, 
-              transport: Transport.NATS,
-              options: {
-                servers: envs.natsServers,
-              }
-            },
-          ]),
-    ]
+    exports: [ClientsModule]
 })
 export class NatsModule {}
